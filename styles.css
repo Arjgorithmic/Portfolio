@@ -1,110 +1,117 @@
-* {
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li, a, form, input, textarea, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #f0f4f8, #dcdcdc);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
     color: #333;
-    scroll-behavior: smooth;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
 }
 
+/* Header styling */
 header {
-    background: rgba(30, 60, 114, 0.85);
+    background: #0a3d62;
     color: #fff;
-    padding: 20px 0;
+    padding: 1rem 0;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
+    top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-}
-
-header .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header h1 {
-    margin-bottom: 10px;
-    font-size: 2.5em;
-    font-weight: 600;
-}
-
-header p {
-    font-size: 1.2em;
 }
 
 nav ul {
     list-style: none;
+    padding: 0;
     display: flex;
     justify-content: center;
-    padding: 10px;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 1rem;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    transition: background 0.3s, backdrop-filter 0.3s;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
+    color: #ffcc00;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 100px auto 0;
-    padding: 20px;
-}
-
-section {
-    padding: 60px 0;
-}
-
-section h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2em;
-    color: #1e3c72;
+/* Hero Slider */
+.hero-slider {
     position: relative;
+    overflow: hidden;
+    margin-top: 4rem;
 }
 
-section h2::after {
-    content: '';
-    width: 50px;
-    height: 4px;
-    background: #1e3c72;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
+.hero-slider .slide {
+    display: none;
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #fff;
+    color: #333;
 }
 
-.experience-item, .project-item, .education-item {
-    background: rgba(255, 255, 255, 0.8);
-    margin-bottom: 20px;
-    padding: 20px;
+.hero-slider .slide.active {
+    display: block;
+}
+
+.hero-slider .slide h1 {
+    font-size: 2.5rem;
+    color: #0a3d62;
+}
+
+.hero-slider .slide p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Back to top button */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0a3d62;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+#back-to-top:hover {
+    background: #ffcc00;
+}
+
+/* Section styling */
+section {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 4rem auto 2rem auto;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.experience-item:hover, .project-item:hover, .education-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+section h1, section h2 {
+    margin-bottom: 1rem;
+    color: #0a3d62;
+    text-align: center;
 }
 
 ul {
@@ -113,27 +120,126 @@ ul {
 }
 
 ul li {
-    background: rgba(255, 255, 255, 0.8);
-    margin-bottom: 10px;
-    padding: 10px;
+    margin-bottom: 0.5rem;
+}
+
+/* Asymmetric grid for projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.project-item {
+    background: #fff;
+    padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-ul li:hover {
-    background: rgba(255, 255, 255, 0.9);
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-    background: rgba(30, 60, 114, 0.85);
+/* Hover animations for links */
+a {
+    color: #0a3d62;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffcc00;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 0.5rem;
+}
+
+form input, form textarea {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #0a3d62;
+    outline: none;
+}
+
+form button {
+    padding: 0.75rem 1rem;
+    background: #0a3d62;
     color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #ffcc00;
+}
+
+/* Footer styling */
+footer {
     text-align: center;
-    padding: 20px 0;
-    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    background: #0a3d62;
+    color: #fff;
+    margin-top: 2rem;
 }
 
 footer p {
     margin: 0;
+}
+
+/* Additional UI enhancements */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 1rem;
+    width: 100%;
+}
+
+.card-title {
+    color: #0a3d62;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card a {
+    color: #0a3d62;
+    text-decoration: none;
+}
+
+.card a:hover {
+    color: #ffcc00;
 }
 

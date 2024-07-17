@@ -3,101 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arjun P Dinesh - AI Engineer</title>
+    <title>Arjun P Dinesh - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container">
-            <h1>Arjun P Dinesh</h1>
-            <p>AI & Machine Learning Engineer</p>
-            <nav>
-                <ul>
-                    <li><a href="#profile">Profile</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section id="profile">
-        <div class="container">
-            <h2>Profile</h2>
-            <p>An MSc in Machine Learning and AI at Christ University, Bangalore with academic foundation in BCA Data Science. Have practical experience as an intern at the Gilbert Research Center and am skilled in Python, Data manipulation and Data Analysis. Enthusiastic about applying knowledge to real-world AI and ML projects.</p>
-        </div>
-    </section>
-    <section id="experience">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            <div class="experience-item">
-                <h3>Gilbert Research Center, Intern</h3>
-                <span>Aug 2023 - Nov 2023, Bangalore, India</span>
-                <p>Completed Data science and Machine Learning Internship in a period of three months at Gilbert Research Center.</p>
-            </div>
-        </div>
-    </section>
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project-item">
-                <h3>DocMaster</h3>
-                <span>May 2024 - Present</span>
-                <p>Designed and implemented a comprehensive pipeline for processing and understanding documents containing both text and images...</p>
-            </div>
-            <div class="project-item">
-                <h3>Advanced Stock Market Prediction</h3>
-                <span>Nov 2023 - Jan 2024</span>
-                <p>Developed an Advanced Stock Market Prediction System using LSTM for BRK-A stocks...</p>
-            </div>
-        </div>
-    </section>
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Master of Science (Artificial Intelligence and Machine Learning)</h3>
-                <span>2023 - Present, Christ University, Bangalore</span>
-            </div>
-            <div class="education-item">
-                <h3>Bachelor of Computer Application Data Science</h3>
-                <span>2020 - 2023, Amrita Vishwa Vidyapeetham</span>
-                <p>CGPA: 7.54</p>
-            </div>
-        </div>
-    </section>
-    <section id="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
+        <nav>
             <ul>
-                <li>Python</li>
-                <li>SQL (Postgres)</li>
-                <li>JavaScript</li>
-                <li>HTML/CSS</li>
-                <li>R</li>
-                <li>Deep learning</li>
-                <li>Computer vision</li>
-                <li>Natural Language Processing</li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Slider -->
+    <div class="hero-slider">
+        <div class="slide active">
+            <h1>Arjun P Dinesh</h1>
+            <p>Artificial Intelligence Engineer</p>
+        </div>
+        <div class="slide">
+            <h1>About Me</h1>
+            <p>Learn more about my background and experience.</p>
+        </div>
+        <div class="slide">
+            <h1>Projects</h1>
+            <p>Explore the projects I have worked on.</p>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">Top</button>
+
+    <!-- About Me Section -->
+    <section id="about" class="container">
+        <div class="card">
+            <h1 class="card-title">About Me</h1>
+            <p>Hi, I'm Arjun P Dinesh, an AI ML Developer based in Bengaluru, Karnataka.</p>
+            <p>I am a postgraduate student pursuing an MSc in Machine Learning and AI at Christ University, Bangalore. My academic foundation in Data Science comes from a BCA Data Science degree at Amrita Vishwa Vidyapeetham. I have practical experience as an intern at the Gilbert Research Center and am skilled in Python, R, and data manipulation. Enthusiastic about applying knowledge to real-world AI and ML projects.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+        <div class="card">
+            <h2 class="card-title">Skills</h2>
+            <ul>
+                <li>Artificial Intelligence: Deep learning, Computer vision, Natural Language Processing</li>
+                <li>Large Language Model: NLP, Lang Chain, NLU, NLG, Chatbot</li>
+                <li>Machine Learning: Python, R, Data science, Data Manipulation</li>
+                <li>Linux: Bash Scripting, System administration, Security, Networking</li>
+                <li>Web Development: HTML, CSS, JavaScript, PHP, Python, Node.js</li>
             </ul>
         </div>
     </section>
-    <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:arjunpdinesh123@gmail.com">arjunpdinesh123@gmail.com</a></p>
-            <p>Phone: <a href="tel:9745309577">9745309577</a></p>
-            <p>GitHub: <a href="https://github.com/Arjgorithmic">Arjgorithmic</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/arjun-p-dinesh-81022a235/">Arjun P Dinesh</a></p>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+        <div class="card">
+            <h2 class="card-title">Projects</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <h3 class="card-subtitle">Project on EDGE AI</h3>
+                    <p>Specialization Project (April 2024 - Present)</p>
+                    <a href="https://github.com/Arjun-P-Dinesh/SpecializationProject.git" target="_blank">GitHub</a>
+                </div>
+                <div class="project-item">
+                    <h3 class="card-subtitle">Advanced Stock Market Prediction using LSTM on BRK-A stocks</h3>
+                    <p>November 2023 - January 2024</p>
+                    <a href="https://colab.research.google.com/drive/1hAgspW1gB3hcm_VxB6Wf2-8pWwngBYsJ?usp=sharing" target="_blank">Google Colab</a>
+                </div>
+                <div class="project-item">
+                    <h3 class="card-subtitle">FitTrak</h3>
+                    <p>A fitness routine tracking application, stores exercise metadata and routines for progress tracking. (August 2023 - December 2023)</p>
+                    <a href="https://github.com/Arjgorithmic/FitTrak" target="_blank">GitHub</a>
+                </div>
+                <div class="project-item">
+                    <h3 class="card-subtitle">Integration of TinyML in edge computing</h3>
+                    <p>Undergraduate Major Project (2022-2023)</p>
+                    <a href="https://github.com/Arjgorithmic/Edge-Computing-and-IOT---Based-Health-monitoring-system-" target="_blank">GitHub</a>
+                </div>
+                <div class="project-item">
+                    <h3 class="card-subtitle">Road Lane Detection</h3>
+                    <p>Case Study on Road Lane Detection done for Undergraduate College project (2022)</p>
+                    <a href="https://github.com/Arjgorithmic/Road-Lane-Detection" target="_blank">GitHub</a>
+                </div>
+            </div>
         </div>
     </section>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Arjun P Dinesh. All rights reserved.</p>
+
+    <!-- Experience Section -->
+    <section id="experience" class="container">
+        <div class="card">
+            <h2 class="card-title">Experience</h2>
+            <div class="experience-item">
+                <h3 class="card-subtitle">Intern at Gilbert Research Center</h3>
+                <p>Bangalore, India (August 2023 - November 2023)</p>
+                <p>Completed Data science and Machine Learning Internship in a period of three months at Gilbert Research Center.</p>
+                <a href="https://www.gilbertresearchcenter.com/" target="_blank">Gilbert Research Center</a>
+            </div>
         </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="container">
+        <div class="card">
+            <h2 class="card-title">Education</h2>
+            <div class="education-item">
+                <h3 class="card-subtitle">Christ University, Bangalore</h3>
+                <p>MSc in Artificial Intelligence and Machine Learning (July 2023 - Present)</p>
+            </div>
+            <div class="education-item">
+                <h3 class="card-subtitle">Amrita Vishwa Vidyapeetham</h3>
+                <p>Bachelor of Computer Application in Data Science (2020 - 2023)</p>
+            </div>
+            <div class="education-item">
+                <h3 class="card-subtitle">GVHSS Kurumathur</h3>
+                <p>Higher Secondary Examination, Kerala (2018 - 2020)</p>
+            </div>
+            <div class="education-item">
+                <h3 class="card-subtitle">Marygiri Senior Secondary School</h3>
+                <p>All India Secondary School Examination (2018)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <div class="card">
+            <h2 class="card-title">Contact</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <p>Email: <a href="mailto:arjunpdineshofficial@gmail.com">arjunpdineshofficial@gmail.com</a></p>
+            <p>Phone: <a href="tel:+916238691025">+91 6238691025</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/arjun-p-dinesh-81022a235/" target="_blank">Arjun P Dinesh</a></p>
+            <p>GitHub: <a href="https://github.com/Arjgorithmic" target="_blank">Arjgorithmic</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Arjun P Dinesh. All rights reserved.</p>
     </footer>
+
     <script src="scripts.js"></script>
 </body>
 </html>
