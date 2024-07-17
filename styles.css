@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1, header p {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.section {
+    padding: 2em 0;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #444;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.timeline-item {
+    background: #fff;
+    border-left: 4px solid #333;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 20px;
+    width: calc(50% - 40px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.education-item {
+    background: #fff;
+    border-left: 4px solid #333;
+    padding: 1em;
+    margin: 1em auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.skills-bar {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bar {
+    margin-bottom: 20px;
+}
+
+.bar .info {
+    margin-bottom: 5px;
+}
+
+.bar .progress-line {
+    background: #ddd;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bar .progress-line span {
+    height: 100%;
+    display: block;
+    border-radius: 10px;
+    position: absolute;
+    animation: progress-animation 2s ease-in-out;
+}
+
+@keyframes progress-animation {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.progress-line.python span { width: 90%; background: #f76c6c; }
+.progress-line.sql span { width: 80%; background: #6cf7a1; }
+.progress-line.javascript span { width: 75%; background: #f7df1e; }
+.progress-line.html-css span { width: 85%; background: #e34c26; }
+.progress-line.r span { width: 70%; background: #276dc3; }
+.progress-line.deep-learning span { width: 85%; background: #76c7c0; }
+.progress-line.computer-vision span { width: 80%; background: #ffc107; }
+.progress-line.nlp span { width: 90%; background: #007bff; }
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background: #555;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
