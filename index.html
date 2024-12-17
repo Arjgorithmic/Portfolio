@@ -1,105 +1,426 @@
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Arjgorithmic</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<header id="header">
-				<div class="content">
-					<div class="inner">
-						<h1>Arjun P Dinesh</h1>
-						<p>Master's Student in Artificial Intelligence and Machine Learning </p>
-					</div>
-				</div>
-				<nav>
-					<ul>
-						<li><a href="#intro">Intro</a></li>
-						<li><a href="#experience">Experience</a></li>
-						<li><a href="#projects">Projects</a></li>
-						<li><a href="#skills">Skills</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</nav>
-			</header>
+<html lang="en">
+<head>
+    <title>Arjgorithmic - Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-O8C+4Ck9NaPCJ/cFEJMpVBNx2RhPOTfASLiKw-CLXc1UzfZ27i6xf8NkkXMI56Yr5UVqPKA22TUxpX72JBWejg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #00bfff;
+            --bg-color: #000;
+            --text-color: #fff;
+            --section-bg: rgba(255,255,255,0.05);
+        }
 
-			<div id="main">
-				<article id="intro">
-					<h2 class="major">Intro</h2>
-					<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-					<p>I am a passionate MSc student in Artificial Intelligence and Machine Learning at Christ University, Bangalore. Currently interning as an AI Engineer at DeepLogicAI, I am keen on exploring innovative AI solutions and advancing my skills in this dynamic field. I am proficient in Python, Large Language Models, and Computer Vision, and committed to applying these skills in real-world applications.</p>
-				</article>
+        body.light {
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --section-bg: #fff;
+        }
 
-				<article id="experience">
-					<h2 class="major">Experience</h2>
-					<span class="image main"><img src="images/work.jpg" alt="" /></span>
-					<p><strong>AI Engineer Intern, DeepLogic AI</strong><br />June 2024 - Present, Bangalore, India</p>
-					<ul>
-						<li>Developed an AI-driven document pipeline for efficient ETL processes, enhancing data integration and workflow automation.</li>
-						<li>Currently designing a custom Large Language Model for specific applications, optimizing performance and functionality.</li>
-					</ul>
-					<p><strong>Machine Learning Intern, Gilbert Research Center</strong><br />August 2023 - November 2023, Bangalore, India</p>
-					<ul>
-						<li>Worked on medical datasets, developing models for analyzing MRI and X-ray data to identify and classify anomalies.</li>
-					</ul>
-				</article>
+        body {
+            margin: 0; 
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: background 0.3s, color 0.3s;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
 
-				<article id="projects">
-					<h2 class="major">Projects</h2>
-					<span class="image main"><img src="images/projects.jpg" alt="" /></span>
-					<p><strong>DocMaster</strong> (May 2024 - July 2024)<br />
-						Designed and implemented a comprehensive document processing pipeline using Python, GenAI, OCR, and Streamlit. Integrated OCR for high-accuracy text extraction from image-based PDFs and refined preprocessing functions for optimal LLM performance.
-					</p>
-					<p><strong>Advanced Stock Market Prediction</strong> (November 2023 - January 2024)<br />
-						Developed an advanced stock market prediction system using LSTM networks, achieving superior forecasting accuracy. Conducted a comparative analysis between ARIMA and LSTM models.
-					</p>
-					<p><strong>Integration of TinyML in Edge Computing for Health Monitoring</strong> (2022 - 2023)<br />
-						Engineered a predictive model to analyze historical vital sign data for early detection of health issues, implemented on a low-power ESP8266 device for real-time classification.
-					</p>
-				</article>
+        /* Dark/Light mode toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 1em;
+            right: 1em;
+            z-index: 9999;
+            background: var(--section-bg);
+            border-radius: 50px;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
 
-				<article id="skills">
-					<h2 class="major">Skills</h2>
-					<p><strong>Programming Languages:</strong> Python, SQL (Postgres), JavaScript, HTML/CSS, R, C++</p>
-					<p><strong>AI & ML:</strong> Deep Learning, Computer Vision, NLP, Data Science</p>
-					<p><strong>Web Development:</strong> HTML, CSS, JavaScript, PHP, Node.js</p>
-					<p><strong>Others:</strong> Linux (Bash Scripting, System Administration), Security, Networking</p>
-				</article>
+        .theme-toggle i {
+            margin-right: 0.5em;
+        }
 
-				<article id="contact">
-                    <h2 class="major">Contact</h2>
-                    <ul class="actions">
-                        <li><a href="assets/resume/Arjun-P-Dinesh_Resume.pdf" class="button primary" download="resume.pdf">Download Resume</a></li>
-                    </ul>
-                    <section class="contact-info">
-                        <p>Email: arjunpdineshofficial@gmail.com</p>
-                        <p>Phone: +91 6238691025</p>
-                        <p>Address: Bangalore, Karnataka, India</p>
-                    </section>
-                    <ul class="icons">
-                        <li><a href="https://twitter.com/arjgorthmic" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                        <li><a href="https://github.com/Arjgorithmic" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-                        <li><a href="https://x.com/ArjunP99781635 class=" class ="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                    </ul>
-                </article>
-                
-			</div>
+        /* Particles background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%; 
+            top: 0; 
+            left: 0; 
+            z-index: -1;
+        }
 
-			<footer id="footer">
-				<p class="copyright">&copy; 2024 Arjun P Dinesh. All rights reserved.</p>
-			</footer>
-		</div>
+        /* Header */
+        #header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            padding: 2em;
+            background: transparent;
+        }
 
-		<div id="bg"></div>
+        #header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
 
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+        #header p {
+            font-size: 1.3em;
+            font-weight: 300;
+            margin-bottom: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 1em;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1.1em;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav ul li a::after {
+            content: "";
+            display: block;
+            height: 2px;
+            width: 0%;
+            background: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4em 1em;
+            text-align: left;
+            background: var(--section-bg);
+            margin-bottom: 2em;
+            border-radius: 8px;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 1em;
+        }
+
+        section p, section ul {
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .image.main img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1em;
+        }
+
+        ul {
+            padding-left: 1.5em;
+        }
+
+        /* Projects Section with VanillaTilt */
+        .project-card {
+            background: var(--section-bg);
+            border-radius: 8px;
+            padding: 1em;
+            margin-bottom: 2em;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        #contact .contact-info p {
+            margin: 0.5em 0;
+            font-weight: 300;
+        }
+
+        #contact .icons a {
+            display: inline-block;
+            margin-right: 1em;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        #contact .icons a:hover {
+            color: var(--primary-color);
+        }
+
+        .actions .button.primary {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.7em 1.5em;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .actions .button.primary:hover {
+            background: #009bd1;
+        }
+
+        /* Footer */
+        #footer {
+            text-align: center;
+            padding: 2em 0;
+            font-size: 0.9em;
+            color: var(--text-color);
+            background: var(--bg-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 0.5em 0;
+            }
+            #header h1 {
+                font-size: 2.2em;
+            }
+            #header p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-adjust"></i> <span>Toggle Theme</span>
+    </div>
+    
+    <!-- Header / Hero -->
+    <header id="header">
+        <h1><span id="typed"></span></h1>
+        <p>Master's Student in Artificial Intelligence and Machine Learning</p>
+        <nav>
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="intro" data-aos="fade-up">
+            <h2>Intro</h2>
+            <div class="image main">
+                <img src="images/pic01.jpg" alt="Profile Image" />
+            </div>
+            <p>I am a passionate MSc student in Artificial Intelligence and Machine Learning at Christ University, Bangalore. Currently interning as an AI Engineer at DeepLogicAI, I am keen on exploring innovative AI solutions and advancing my skills in this dynamic field. I am proficient in Python, Large Language Models, and Computer Vision, and committed to applying these skills in real-world applications.</p>
+        </section>
+
+        <section id="experience" data-aos="fade-up">
+            <h2>Experience</h2>
+            <div class="image main"><img src="images/work.jpg" alt="Work Image" /></div>
+            <p><strong>AI Engineer Intern, DeepLogic AI</strong><br>June 2024 - Present, Bangalore, India</p>
+            <ul>
+                <li>Developed an AI-driven document pipeline for efficient ETL processes, enhancing data integration and workflow automation.</li>
+                <li>Designing a custom LLM for specific enterprise applications, optimizing performance and user experience.</li>
+            </ul>
+            <p><strong>Machine Learning Intern, Gilbert Research Center</strong><br>August 2023 - November 2023, Bangalore, India</p>
+            <ul>
+                <li>Implemented models to analyze MRI and X-ray data, aiding in anomaly detection and classification for healthcare diagnostics.</li>
+            </ul>
+        </section>
+
+        <section id="projects" data-aos="fade-up">
+            <h2>Projects</h2>
+            <div class="project-card" data-tilt data-tilt-scale="1.05">
+                <h3>DocMaster (May 2024 - July 2024)</h3>
+                <p>Developed a comprehensive document processing pipeline using Python, GenAI, OCR, and Streamlit. Integrated OCR for high-accuracy text extraction from image-based PDFs and refined preprocessing functions for optimal LLM performance.</p>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-scale="1.05">
+                <h3>Advanced Stock Market Prediction (Nov 2023 - Jan 2024)</h3>
+                <p>Created an LSTM-based prediction system for stock markets, outperforming ARIMA models in forecasting accuracy, and enabling better investment strategies.</p>
+            </div>
+
+            <div class="project-card" data-tilt data-tilt-scale="1.05">
+                <h3>TinyML in Edge Computing for Health Monitoring (2022 - 2023)</h3>
+                <p>Engineered a predictive model for early detection of health issues from vital sign data, deployed on a low-power ESP8266 device for real-time classification.</p>
+            </div>
+        </section>
+
+        <section id="skills" data-aos="fade-up">
+            <h2>Skills</h2>
+            <p><strong>Programming Languages:</strong> Python, SQL (Postgres), JavaScript, HTML/CSS, R, C++</p>
+            <p><strong>AI & ML:</strong> Deep Learning, Computer Vision, NLP, Data Science</p>
+            <p><strong>Web Development:</strong> HTML, CSS, JavaScript, PHP, Node.js</p>
+            <p><strong>Others:</strong> Linux (Bash Scripting, System Administration), Security, Networking</p>
+        </section>
+
+        <section id="contact" data-aos="fade-up">
+            <h2>Contact</h2>
+            <ul class="actions">
+                <li><a href="assets/resume/Arjun-P-Dinesh_Resume.pdf" class="button primary" download="Arjun-P-Dinesh_Resume.pdf">Download Resume</a></li>
+            </ul>
+            <div class="contact-info">
+                <p><strong>Email:</strong> arjunpdineshofficial@gmail.com</p>
+                <p><strong>Phone:</strong> +91 6238691025</p>
+                <p><strong>Address:</strong> Bangalore, Karnataka, India</p>
+            </div>
+            <ul class="icons">
+                <li><a href="https://twitter.com/arjgorthmic" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                <li><a href="https://github.com/Arjgorithmic" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/arjunpdinesh" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>&copy; 2024 Arjun P Dinesh. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- VanillaTilt.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            duration: 1000,
+            easing: 'ease-in-out'
+        });
+
+        // Typed.js for animated text
+        var typed = new Typed('#typed', {
+            strings: ["Hello, I'm Arjun P Dinesh."],
+            typeSpeed: 50,
+            backSpeed: 25,
+            startDelay: 500,
+            showCursor: false,
+            loop: false
+        });
+
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 60,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": { "value": "#ffffff" },
+                "shape": {
+                    "type": "circle",
+                    "stroke": { "width": 0, "color": "#000000" },
+                    "polygon": { "nb_sides": 5 },
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "bounce": false,
+                    "attract": {
+                        "enable": false
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 140, "line_linked": { "opacity": 1 }},
+                    "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
+                    "repulse": { "distance": 200 },
+                    "push": { "particles_nb": 4 },
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Theme Toggle
+        function toggleTheme() {
+            document.body.classList.toggle('light');
+        }
+
+        // Initialize VanillaTilt for project cards
+        VanillaTilt.init(document.querySelectorAll(".project-card"), {
+            max: 15,
+            speed: 400
+        });
+    </script>
+</body>
 </html>
