@@ -189,7 +189,7 @@
             padding: 160px 0 100px;
             background: 
                 linear-gradient(rgba(124, 185, 236, 0.8), rgba(124, 185, 236, 0.8)),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%237CB9EC"/><rect x="0" y="0" width="20" height="20" fill="%238CC9ED"/><rect x="20" y="20" width="20" height="20" fill="%238CC9ED"/></svg>');
+                url('image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%237CB9EC"/><rect x="0" y="0" width="20" height="20" fill="%238CC9ED"/><rect x="20" y="20" width="20" height="20" fill="%238CC9ED"/></svg>');
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -338,7 +338,7 @@
         #experience {
             background: 
                 linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%23F5F5F5"/><rect x="0" y="0" width="20" height="20" fill="%23EEEEEE"/><rect x="20" y="20" width="20" height="20" fill="%23EEEEEE"/></svg>');
+                url('image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%23F5F5F5"/><rect x="0" y="0" width="20" height="20" fill="%23EEEEEE"/><rect x="20" y="20" width="20" height="20" fill="%23EEEEEE"/></svg>');
         }
         
         .timeline {
@@ -419,7 +419,7 @@
         #projects {
             background: 
                 linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%23FFFFFF"/><rect x="0" y="0" width="20" height="20" fill="%23F5F5F5"/><rect x="20" y="20" width="20" height="20" fill="%23F5F5F5"/></svg>');
+                url('image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%23FFFFFF"/><rect x="0" y="0" width="20" height="20" fill="%23F5F5F5"/><rect x="20" y="20" width="20" height="20" fill="%23F5F5F5"/></svg>');
         }
         
         .projects-grid {
@@ -466,7 +466,7 @@
         #contact {
             background: 
                 linear-gradient(rgba(124, 185, 236, 0.9), rgba(124, 185, 236, 0.9)),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%237CB9EC"/><rect x="0" y="0" width="20" height="20" fill="%238CC9ED"/><rect x="20" y="20" width="20" height="20" fill="%238CC9ED"/></svg>');
+                url('image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%237CB9EC"/><rect x="0" y="0" width="20" height="20" fill="%238CC9ED"/><rect x="20" y="20" width="20" height="20" fill="%238CC9ED"/></svg>');
             text-align: center;
         }
         
@@ -484,9 +484,9 @@
             align-items: center;
             gap: 15px;
             background: white;
-            padding: 25px;
+            padding: 35px;
             border: 4px solid #000;
-            width: 200px;
+            width: 350px;
             box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
         }
         
@@ -721,14 +721,21 @@
                     <div class="timeline-content">
                         <h3>AI ENGINEER INTERN</h3>
                         <span class="date">DEEPLOGIC AI | JUNE 2024 – JULY 2025</span>
-                        <p>Developed hybrid ML models for email classification, engineered AI-driven ETL pipelines for financial data, built cybersecurity solutions for malware detection, and created geolocation extraction tools.</p>
+                        <p>Developed a hybrid ML model combining regex-based pattern matching and deep learning to classify emails into priority tiers. Regex rules scored metadata, while the deep learning model analyzed content using TF-IDF vectorization and NaiveBase Model, achieving reducing manual sorting efforts.</p>
+                        <p>Engineered an AI-driven ETL pipeline leveraging OpenAI GPT to extract, process, and structure unstructured financial data from documents achieving 85% improvement in data retrieval efficiency for investment analysis and risk management workflows.</p>
+                        <p>Built a cybersecurity solution to detect malware in emails and PDF attachments using NLP for content analysis and metadata parsing. Flagged malicious content and automatically quarantined threats using VirusTotal API integration, reducing security incidents by.</p>
+                        <p>Implemented rule-based checks and ML-based anomaly detection to identify suspicious patterns in email headers and document properties.</p>
+                        <p>Built a geolocation extraction tool using open-source AI models and address APIs to parse and standardize unstructured address data from financial documents, improving automation accuracy.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>DATA SCIENCE AND MACHINE LEARNING INTERN</h3>
                         <span class="date">GILBERT RESEARCH CENTER | AUG 2023 - NOV 2023</span>
-                        <p>Applied ML techniques on large datasets, built models for anomaly classification in medical imaging data, and used statistical/NLP techniques for diagnostic signal extraction.</p>
+                        <p>Applied machine learning techniques on large datasets, building models that enhanced diagnostic solutions.</p>
+                        <p>Built ML models to identify and classify anomalies in medical imaging data.</p>
+                        <p>Applied statistical and NLP-based techniques to extract diagnostic signals.</p>
+                        <p>Developed models that could identify and classify medical anomalies, contributing to advanced diagnostic solutions</p>
                     </div>
                 </div>
             </div>
@@ -798,15 +805,11 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <p>ARJUNPdINESHOFFICIAL@GMAIL.COM</p>
+                    <p>ARJUNPDINESHOFFICIAL@GMAIL.COM</p>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <p>+91 6238691025</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>KERALA, INDIA</p>
+                    <p>+91<br>6238691025</p>
                 </div>
             </div>
             <a href="mailto:arjunpdineshofficial@gmail.com" class="pixel-btn">SEND MESSAGE</a>
