@@ -1,425 +1,874 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Arjgorithmic - Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-O8C+4Ck9NaPCJ/cFEJMpVBNx2RhPOTfASLiKw-CLXc1UzfZ27i6xf8NkkXMI56Yr5UVqPKA22TUxpX72JBWejg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun P Dinesh - Minecraft Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Minecraft Font */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
         :root {
-            --primary-color: #00bfff;
-            --bg-color: #000;
-            --text-color: #fff;
-            --section-bg: rgba(255,255,255,0.05);
+            --minecraft-green: #5BBD43;
+            --minecraft-dark-green: #4A9B33;
+            --minecraft-dirt: #8D6E63;
+            --minecraft-stone: #9E9E9E;
+            --minecraft-coal: #424242;
+            --minecraft-diamond: #4FC3F7;
+            --minecraft-gold: #FFD54F;
+            --minecraft-red: #F44336;
+            --minecraft-water: #2196F3;
+            --minecraft-sand: #FFECB3;
+            --minecraft-wood: #8B4513;
+            --minecraft-leaf: #4CAF50;
         }
-
-        body.light {
-            --bg-color: #f5f5f5;
-            --text-color: #333;
-            --section-bg: #fff;
-        }
-
-        body {
-            margin: 0; 
+        
+        * {
+            margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-color);
-            color: var(--text-color);
-            transition: background 0.3s, color 0.3s;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+            box-sizing: border-box;
         }
-
-        /* Dark/Light mode toggle */
-        .theme-toggle {
-            position: fixed;
-            top: 1em;
-            right: 1em;
-            z-index: 9999;
-            background: var(--section-bg);
-            border-radius: 50px;
-            padding: 0.5em 1em;
+        
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #7CB9EC; /* Sky blue */
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 0%, transparent 10%),
+                radial-gradient(circle at 90% 80%, rgba(255,255,255,0.1) 0%, transparent 10%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        /* Pixelated elements */
+        .pixel-border {
+            border: 4px solid #000;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
+        }
+        
+        .pixel-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: var(--minecraft-green);
+            color: white;
+            border: 3px solid #000;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            text-transform: uppercase;
             cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pixel-btn:hover {
+            background: var(--minecraft-dark-green);
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+        }
+        
+        .pixel-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+        
+        .pixel-card {
+            background: #fff;
+            border: 4px solid #000;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: #000;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            font-size: 2rem;
+            line-height: 1.4;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--minecraft-diamond);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 0.8rem;
+            line-height: 1.8;
+        }
+        
+        /* Header */
+        header {
+            background: var(--minecraft-stone);
+            border-bottom: 4px solid #000;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.2rem;
+            color: white;
+            text-shadow: 2px 2px 0 #000;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            font-size: 0.7rem;
+            padding: 8px 12px;
+            background: var(--minecraft-green);
+            border: 2px solid #000;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .nav-links a:hover {
+            background: var(--minecraft-dark-green);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+        
+        /* Hero Section */
+        #hero {
+            padding: 160px 0 100px;
+            background: 
+                linear-gradient(rgba(124, 185, 236, 0.8), rgba(124, 185, 236, 0.8)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%237CB9EC"/><rect x="0" y="0" width="20" height="20" fill="%238CC9ED"/><rect x="20" y="20" width="20" height="20" fill="%238CC9ED"/></svg>');
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content p {
+            margin-bottom: 30px;
+            color: #000;
+            text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+        }
+        
+        .minecraft-avatar {
+            width: 150px;
+            height: 150px;
+            background: var(--minecraft-dirt);
+            border: 4px solid #000;
+            margin: 0 auto 30px;
+            position: relative;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+        }
+        
+        .minecraft-avatar:before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            width: 90px;
+            height: 90px;
+            background: #FFCCBC;
+            border: 4px solid #000;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .social-icons a {
             display: flex;
             align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 3px solid #000;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
         }
-
-        .theme-toggle i {
-            margin-right: 0.5em;
+        
+        .social-icons a:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 rgba(0,0,0,0.3);
         }
-
-        /* Particles background */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%; 
-            top: 0; 
-            left: 0; 
-            z-index: -1;
+        
+        /* Blocks */
+        .block {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #000;
+            position: absolute;
+            box-shadow: inset 2px 2px 0 rgba(255,255,255,0.3);
         }
-
-        /* Header */
-        #header {
+        
+        .grass-block {
+            background: linear-gradient(to bottom, var(--minecraft-green) 60%, var(--minecraft-dirt) 60%);
+        }
+        
+        .dirt-block {
+            background: var(--minecraft-dirt);
+        }
+        
+        .stone-block {
+            background: var(--minecraft-stone);
+        }
+        
+        .diamond-block {
+            background: var(--minecraft-diamond);
+        }
+        
+        .gold-block {
+            background: var(--minecraft-gold);
+        }
+        
+        .coal-block {
+            background: var(--minecraft-coal);
+        }
+        
+        /* About */
+        #about {
+            background: 
+                linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%23FFFFFF"/><rect x="0" y="0" width="20" height="20" fill="%23F5F5F5"/><rect x="20" y="20" width="20" height="20" fill="%23F5F5F5"/></svg>');
+            position: relative;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .skills-container {
+            margin-top: 30px;
+        }
+        
+        .skill-category {
+            margin-bottom: 25px;
+        }
+        
+        .skill-category h3 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: var(--minecraft-coal);
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background: var(--minecraft-sand);
+            color: #000;
+            padding: 8px 12px;
+            border: 2px solid #000;
+            font-size: 0.6rem;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        }
+        
+        /* Experience */
+        #experience {
+            background: 
+                linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%23F5F5F5"/><rect x="0" y="0" width="20" height="20" fill="%23EEEEEE"/><rect x="20" y="20" width="20" height="20" fill="%23EEEEEE"/></svg>');
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            background: var(--minecraft-wood);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -4px;
+            border: 2px solid #000;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 25px;
+            background: white;
+            border: 4px solid #000;
+            position: relative;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+        }
+        
+        .timeline-content h3 {
+            color: var(--minecraft-wood);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content .date {
+            color: var(--minecraft-red);
+            font-size: 0.7rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--minecraft-diamond);
+            top: 30px;
+            border: 3px solid #000;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd):before {
+            right: -54px;
+        }
+        
+        .timeline-item:nth-child(even):before {
+            left: -54px;
+        }
+        
+        /* Projects */
+        #projects {
+            background: 
+                linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%23FFFFFF"/><rect x="0" y="0" width="20" height="20" fill="%23F5F5F5"/><rect x="20" y="20" width="20" height="20" fill="%23F5F5F5"/></svg>');
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: white;
+            border: 4px solid #000;
+            padding: 25px;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+            transition: all 0.2s;
+        }
+        
+        .project-card:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 11px 11px 0 rgba(0,0,0,0.3);
+        }
+        
+        .project-card h3 {
+            color: var(--minecraft-wood);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .project-tag {
+            background: var(--minecraft-sand);
+            color: #000;
+            padding: 5px 10px;
+            border: 2px solid #000;
+            font-size: 0.6rem;
+        }
+        
+        /* Contact */
+        #contact {
+            background: 
+                linear-gradient(rgba(124, 185, 236, 0.9), rgba(124, 185, 236, 0.9)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="%237CB9EC"/><rect x="0" y="0" width="20" height="20" fill="%238CC9ED"/><rect x="20" y="20" width="20" height="20" fill="%238CC9ED"/></svg>');
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            min-height: 100vh;
-            padding: 2em;
-            background: transparent;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 25px;
+            border: 4px solid #000;
+            width: 200px;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
         }
-
-        #header h1 {
-            font-size: 3em;
-            font-weight: 700;
-            margin-bottom: 0.5em;
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--minecraft-water);
         }
-
-        #header p {
-            font-size: 1.3em;
-            font-weight: 300;
-            margin-bottom: 1em;
+        
+        .contact-item p {
+            margin: 0;
+            font-size: 0.7rem;
         }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: inline-block;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin: 0 1em;
-        }
-
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 400;
-            font-size: 1.1em;
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        nav ul li a::after {
-            content: "";
-            display: block;
-            height: 2px;
-            width: 0%;
-            background: var(--primary-color);
-            transition: width 0.3s;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        /* Sections */
-        section {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 4em 1em;
-            text-align: left;
-            background: var(--section-bg);
-            margin-bottom: 2em;
-            border-radius: 8px;
-        }
-
-        section h2 {
-            font-size: 2.5em;
-            font-weight: 600;
-            margin-bottom: 1em;
-        }
-
-        section p, section ul {
-            line-height: 1.6;
-            font-weight: 300;
-        }
-
-        .image.main img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 1em;
-        }
-
-        ul {
-            padding-left: 1.5em;
-        }
-
-        /* Projects Section with VanillaTilt */
-        .project-card {
-            background: var(--section-bg);
-            border-radius: 8px;
-            padding: 1em;
-            margin-bottom: 2em;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-card h3 {
-            margin-top: 0;
-            font-weight: 600;
-        }
-
-        /* Contact Section */
-        #contact .contact-info p {
-            margin: 0.5em 0;
-            font-weight: 300;
-        }
-
-        #contact .icons a {
-            display: inline-block;
-            margin-right: 1em;
-            color: var(--text-color);
-            transition: color 0.3s;
-        }
-
-        #contact .icons a:hover {
-            color: var(--primary-color);
-        }
-
-        .actions .button.primary {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 0.7em 1.5em;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-            display: inline-block;
-        }
-
-        .actions .button.primary:hover {
-            background: #009bd1;
-        }
-
+        
         /* Footer */
-        #footer {
+        footer {
+            background: var(--minecraft-coal);
+            color: white;
             text-align: center;
-            padding: 2em 0;
-            font-size: 0.9em;
-            color: var(--text-color);
-            background: var(--bg-color);
+            padding: 30px 0;
+            border-top: 4px solid #000;
         }
-
+        
+        footer p {
+            margin: 0;
+            font-size: 0.7rem;
+            color: #ccc;
+        }
+        
+        /* Floating blocks */
+        .floating-blocks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
         /* Responsive */
+        @media (max-width: 992px) {
+            .timeline:before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd):before,
+            .timeline-item:nth-child(even):before {
+                left: 21px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+        
         @media (max-width: 768px) {
-            nav ul li {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--minecraft-stone);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: 0.3s;
+                border-right: 4px solid #000;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu {
                 display: block;
-                margin: 0.5em 0;
             }
-            #header h1 {
-                font-size: 2.2em;
+            
+            .about-content {
+                flex-direction: column;
             }
-            #header p {
-                font-size: 1.2em;
+            
+            h1 {
+                font-size: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
-
-    <!-- Theme Toggle -->
-    <div class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-adjust"></i> <span>Toggle Theme</span>
+    <!-- Floating blocks decoration -->
+    <div class="floating-blocks">
+        <div class="block grass-block" style="top: 10%; left: 5%;"></div>
+        <div class="block dirt-block" style="top: 20%; right: 10%;"></div>
+        <div class="block stone-block" style="bottom: 30%; left: 15%;"></div>
+        <div class="block diamond-block" style="top: 40%; right: 20%;"></div>
+        <div class="block gold-block" style="bottom: 20%; right: 5%;"></div>
+        <div class="block coal-block" style="top: 60%; left: 25%;"></div>
     </div>
-    
-    <!-- Header / Hero -->
-    <header id="header">
-        <h1><span id="typed"></span></h1>
-        <p>Master's Student in Artificial Intelligence and Machine Learning</p>
-        <nav>
-            <ul>
-                <li><a href="#intro">Intro</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">ARJUN P DINESH</div>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <section id="intro" data-aos="fade-up">
-            <h2>Intro</h2>
-            <div class="image main">
-                <img src="images/pic01.jpg" alt="Profile Image" />
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="minecraft-avatar"></div>
+                <h1>AI/ML ENGINEER & NLP SPECIALIST</h1>
+                <p>Delivering cutting-edge NLP solutions across finance, healthcare, and document automation with expertise in text representation, semantic extraction, and LLM fine-tuning.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="pixel-btn">View Projects</a>
+                    <a href="#contact" class="pixel-btn">Contact Me</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://arjgorithmic.github.io/Portfolio/" target="_blank"><i class="fas fa-globe"></i></a>
+                    <a href="https://github.com/Arjgorithmic" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/arjunpdinesh/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:arjunpdineshofficial@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-            <p>I am a passionate MSc student in Artificial Intelligence and Machine Learning at Christ University, Bangalore. Currently interning as an AI Engineer at DeepLogicAI, I am keen on exploring innovative AI solutions and advancing my skills in this dynamic field. I am proficient in Python, Large Language Models, and Computer Vision, and committed to applying these skills in real-world applications.</p>
-        </section>
+        </div>
+    </section>
 
-        <section id="experience" data-aos="fade-up">
-            <h2>Experience</h2>
-            <div class="image main"><img src="images/work.jpg" alt="Work Image" /></div>
-            <p><strong>AI Engineer Intern, DeepLogic AI</strong><br>June 2024 - Present, Bangalore, India</p>
-            <ul>
-                <li>Developed an AI-driven document pipeline for efficient ETL processes, enhancing data integration and workflow automation.</li>
-                <li>Designing a custom LLM for specific enterprise applications, optimizing performance and user experience.</li>
-            </ul>
-            <p><strong>Machine Learning Intern, Gilbert Research Center</strong><br>August 2023 - November 2023, Bangalore, India</p>
-            <ul>
-                <li>Implemented models to analyze MRI and X-ray data, aiding in anomaly detection and classification for healthcare diagnostics.</li>
-            </ul>
-        </section>
-
-        <section id="projects" data-aos="fade-up">
-            <h2>Projects</h2>
-            <div class="project-card" data-tilt data-tilt-scale="1.05">
-                <h3>DocMaster (May 2024 - July 2024)</h3>
-                <p>Developed a comprehensive document processing pipeline using Python, GenAI, OCR, and Streamlit. Integrated OCR for high-accuracy text extraction from image-based PDFs and refined preprocessing functions for optimal LLM performance.</p>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>ABOUT ME</h2>
             </div>
-
-            <div class="project-card" data-tilt data-tilt-scale="1.05">
-                <h3>Advanced Stock Market Prediction (Nov 2023 - Jan 2024)</h3>
-                <p>Created an LSTM-based prediction system for stock markets, outperforming ARIMA models in forecasting accuracy, and enabling better investment strategies.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="pixel-card">
+                        <h3>AI/ML ENGINEER WITH EXPERIENCE DELIVERING NLP-FOCUSED SOLUTIONS</h3>
+                        <p>I'm an AI/ML Engineer with a strong background in text representation (TF-IDF, n-grams, bag-of-words), semantic extraction, and large language model (LLM) fine-tuning. I have experience designing scalable software architectures and ML pipelines using Python, PyTorch, TensorFlow, and Scikit-learn.</p>
+                        <p>My expertise extends to software development, data structuring, and integrating ML APIs for production-ready solutions across domains like finance, healthcare, and document automation.</p>
+                    </div>
+                    
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3>LANGUAGES</h3>
+                            <div class="skills">
+                                <span class="skill-tag">PYTHON</span>
+                                <span class="skill-tag">JAVASCRIPT</span>
+                                <span class="skill-tag">NODE.JS</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">R</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>NLP & ML TECHNIQUES</h3>
+                            <div class="skills">
+                                <span class="skill-tag">TEXT CLASSIFICATION</span>
+                                <span class="skill-tag">SENTIMENT ANALYSIS</span>
+                                <span class="skill-tag">TF-IDF</span>
+                                <span class="skill-tag">NLP</span>
+                                <span class="skill-tag">NER</span>
+                                <span class="skill-tag">EMBEDDINGS</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>FRAMEWORKS</h3>
+                            <div class="skills">
+                                <span class="skill-tag">TENSORFLOW</span>
+                                <span class="skill-tag">PYTORCH</span>
+                                <span class="skill-tag">SCIKIT-LEARN</span>
+                                <span class="skill-tag">HUGGINGFACE</span>
+                                <span class="skill-tag">NLTK</span>
+                                <span class="skill-tag">SPACY</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>TOOLS & DEVOPS</h3>
+                            <div class="skills">
+                                <span class="skill-tag">GIT</span>
+                                <span class="skill-tag">DOCKER</span>
+                                <span class="skill-tag">KUBERNETES</span>
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">FLASK</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="project-card" data-tilt data-tilt-scale="1.05">
-                <h3>TinyML in Edge Computing for Health Monitoring (2022 - 2023)</h3>
-                <p>Engineered a predictive model for early detection of health issues from vital sign data, deployed on a low-power ESP8266 device for real-time classification.</p>
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>EXPERIENCE</h2>
             </div>
-        </section>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>AI ENGINEER INTERN</h3>
+                        <span class="date">DEEPLOGIC AI | JUNE 2024 – JULY 2025</span>
+                        <p>Developed hybrid ML models for email classification, engineered AI-driven ETL pipelines for financial data, built cybersecurity solutions for malware detection, and created geolocation extraction tools.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>DATA SCIENCE AND MACHINE LEARNING INTERN</h3>
+                        <span class="date">GILBERT RESEARCH CENTER | AUG 2023 - NOV 2023</span>
+                        <p>Applied ML techniques on large datasets, built models for anomaly classification in medical imaging data, and used statistical/NLP techniques for diagnostic signal extraction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="skills" data-aos="fade-up">
-            <h2>Skills</h2>
-            <p><strong>Programming Languages:</strong> Python, SQL (Postgres), JavaScript, HTML/CSS, R, C++</p>
-            <p><strong>AI & ML:</strong> Deep Learning, Computer Vision, NLP, Data Science</p>
-            <p><strong>Web Development:</strong> HTML, CSS, JavaScript, PHP, Node.js</p>
-            <p><strong>Others:</strong> Linux (Bash Scripting, System Administration), Security, Networking</p>
-        </section>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>PROJECTS</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>NAYAPAISA</h3>
+                    <p>Full-stack invoice management system with AI modules for risk scoring and fraud detection.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">FLASK</span>
+                        <span class="project-tag">FIREBASE</span>
+                        <span class="project-tag">PYTHON</span>
+                        <span class="project-tag">NLP</span>
+                    </div>
+                    <a href="https://github.com/Arjgorithmic" class="pixel-btn" target="_blank">VIEW PROJECT</a>
+                </div>
+                <div class="project-card">
+                    <h3>PERSONATALK</h3>
+                    <p>Voice-driven AI personality chatbot with speech recognition and GPT-4 integration.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">GPT-4</span>
+                        <span class="project-tag">SPEECH RECOGNITION</span>
+                        <span class="project-tag">NLP</span>
+                        <span class="project-tag">GRADIO</span>
+                    </div>
+                    <a href="https://github.com/Arjgorithmic" class="pixel-btn" target="_blank">VIEW PROJECT</a>
+                </div>
+                <div class="project-card">
+                    <h3>MEDSPEAK</h3>
+                    <p>AI-powered medical assistant processing speech for diagnostic insights.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">DEEP LEARNING</span>
+                        <span class="project-tag">SPEECH RECOGNITION</span>
+                        <span class="project-tag">NLP</span>
+                        <span class="project-tag">HEALTHCARE</span>
+                    </div>
+                    <a href="https://github.com/Arjgorithmic" class="pixel-btn" target="_blank">VIEW PROJECT</a>
+                </div>
+                <div class="project-card">
+                    <h3>ATSMAXIMIZER</h3>
+                    <p>Tool to optimize resumes for Applicant Tracking Systems using ML.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">SCIKIT-LEARN</span>
+                        <span class="project-tag">PYTHON</span>
+                        <span class="project-tag">ML</span>
+                    </div>
+                    <a href="https://github.com/Arjgorithmic" class="pixel-btn" target="_blank">VIEW PROJECT</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="contact" data-aos="fade-up">
-            <h2>Contact</h2>
-            <ul class="actions">
-                <li><a href="assets/resume/Arjun-P-Dinesh_Resume.pdf" class="button primary" download="Arjun-P-Dinesh_Resume.pdf">Download Resume</a></li>
-            </ul>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>GET IN TOUCH</h2>
+            </div>
             <div class="contact-info">
-                <p><strong>Email:</strong> arjunpdineshofficial@gmail.com</p>
-                <p><strong>Phone:</strong> +91 6238691025</p>
-                <p><strong>Address:</strong> Bangalore, Karnataka, India</p>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>ARJUNPdINESHOFFICIAL@GMAIL.COM</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91 6238691025</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>KERALA, INDIA</p>
+                </div>
             </div>
-            <ul class="icons">
-                <li><a href="https://twitter.com/arjgorthmic" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
-                <li><a href="https://github.com/Arjgorithmic" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-                <li><a href="https://www.linkedin.com/in/arjunpdinesh" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-            </ul>
-        </section>
-    </main>
+            <a href="mailto:arjunpdineshofficial@gmail.com" class="pixel-btn">SEND MESSAGE</a>
+        </div>
+    </section>
 
-    <footer id="footer">
-        <p>&copy; 2024 Arjun P Dinesh. All rights reserved.</p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&COPY; 2024 ARJUN P DINESH. ALL RIGHTS RESERVED.</p>
+        </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- AOS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <!-- Typed.js -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <!-- VanillaTilt.js -->
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            once: true,
-            duration: 1000,
-            easing: 'ease-in-out'
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
 
-        // Typed.js for animated text
-        var typed = new Typed('#typed', {
-            strings: ["Hello, I'm Arjun P Dinesh."],
-            typeSpeed: 50,
-            backSpeed: 25,
-            startDelay: 500,
-            showCursor: false,
-            loop: false
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                navLinks.classList.remove('active');
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
 
-        // Particles.js configuration
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 60,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": { "value": "#ffffff" },
-                "shape": {
-                    "type": "circle",
-                    "stroke": { "width": 0, "color": "#000000" },
-                    "polygon": { "nb_sides": 5 },
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false
-                },
-                "size": {
-                    "value": 3,
-                    "random": true
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 3,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "bounce": false,
-                    "attract": {
-                        "enable": false
-                    }
+        // Add block animation on scroll
+        window.addEventListener('scroll', () => {
+            const blocks = document.querySelectorAll('.block');
+            blocks.forEach(block => {
+                const blockPosition = block.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (blockPosition < screenPosition) {
+                    block.style.transform = 'translateY(0)';
+                    block.style.opacity = '1';
                 }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "grab" },
-                    "onclick": { "enable": true, "mode": "push" },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": { "distance": 140, "line_linked": { "opacity": 1 }},
-                    "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
-                    "repulse": { "distance": 200 },
-                    "push": { "particles_nb": 4 },
-                }
-            },
-            "retina_detect": true
+            });
         });
 
-        // Theme Toggle
-        function toggleTheme() {
-            document.body.classList.toggle('light');
-        }
-
-        // Initialize VanillaTilt for project cards
-        VanillaTilt.init(document.querySelectorAll(".project-card"), {
-            max: 15,
-            speed: 400
+        // Initialize blocks
+        document.addEventListener('DOMContentLoaded', () => {
+            const blocks = document.querySelectorAll('.block');
+            blocks.forEach(block => {
+                block.style.transition = 'all 0.5s ease';
+                block.style.transform = 'translateY(50px)';
+                block.style.opacity = '0';
+            });
+            
+            // Trigger initial animation
+            setTimeout(() => {
+                window.dispatchEvent(new Event('scroll'));
+            }, 500);
         });
     </script>
 </body>
